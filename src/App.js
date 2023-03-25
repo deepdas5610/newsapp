@@ -3,7 +3,7 @@ import "./App.css";
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
   render() {
@@ -11,59 +11,59 @@ export default class App extends Component {
       <div>
         <Router>
           <Navbar />
-          <Switch>
-            <Route path="/">
-              <News
-                key="general"
-                pageSize={6}
-                country="in"
-                category="general"
-              />
+          <Routes>
+            <Route path="/" element={<News
+              key="general"
+              pageSize={6}
+              country="in"
+              category="general"
+            />}>
+
             </Route>
-            <Route exact path="/business">
-              <News
-                key="business"
-                pageSize={6}
-                country="in"
-                category="business"
-              />
+            <Route exact path="/business" element={<News
+              key="business"
+              pageSize={6}
+              country="in"
+              category="business"
+            />}>
+
             </Route>
-            <Route path="/entertainment">
-              <News
-                key="entertainment"
-                pageSize={6}
-                country="in"
-                category="entertainment"
-              />
+            <Route path="/entertainment" element={<News
+              key="entertainment"
+              pageSize={6}
+              country="in"
+              category="entertainment"
+            />}>
+
             </Route>
-            <Route path="/general">
-              <News
-                key="general"
-                pageSize={6}
-                country="in"
-                category="general"
-              />
+            <Route path="/general" element={<News
+              key="general"
+              pageSize={6}
+              country="in"
+              category="general"
+            />}>
+
             </Route>
-            <Route path="/health">
-              <News key="health" pageSize={6} country="in" category="health" />
+            <Route path="/health" element={<News key="health" pageSize={6} country="in" category="health" />}>
+
             </Route>
-            <Route path="/science">
-              <News
-                key="science"
-                pageSize={5}
-                country="in"
-                category="science"
-              />
+            <Route path="/science" element={<News
+              key="science"
+              pageSize={5}
+              country="in"
+              category="science"
+            />}>
+
             </Route>
-            <Route path="/technology">
-              <News
-                key="technology"
-                pageSize={6}
-                country="in"
-                category="technology"
-              />
+            <Route path="/technology" element={<News
+              key="technology"
+              pageSize={6}
+              country="in"
+              category="technology"
+            />}>
+
             </Route>
-          </Switch>
+          </Routes>
         </Router>
       </div>
     );
